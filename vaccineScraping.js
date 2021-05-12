@@ -16,13 +16,13 @@ function getPerc(done, total) {
 function makeLogLine(vaccine, containerNo) {
 	var done = getVaccineCountByName(vaccine)
 	var total = getTotalFromElementNumber(containerNo)
-	var output = vaccine == "" ? "Razem" : vaccine
+	var output = vaccine == "" ? "\nRazem" : vaccine
 	return output + " zaszczepiono: " + done + "/" + total + " " + getPerc(done,total) + ", pozostało do zaszczepienia: " + Math.round(total - done) + "\n"
 }
 var message = makeLogLine("Pfizer", 2) + 
 makeLogLine("Moderna", 3) + 
 makeLogLine("AstraZeneca", 4) + 
-makeLogLine("Johnson&Johnson", 5)
+makeLogLine("Johnson&Johnson", 5) + 
 makeLogLine("",6)
 
 window.alert (message)
